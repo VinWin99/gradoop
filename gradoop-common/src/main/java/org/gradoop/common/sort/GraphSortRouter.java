@@ -1,6 +1,8 @@
 package org.gradoop.common.sort;
 
-import static sort.gradoop.SortConstantsUtil.*;
+import static org.gradoop.common.sort.SortConstantsUtil.AGE;
+import static org.gradoop.common.sort.SortConstantsUtil.NAME;
+import static org.gradoop.common.sort.SortConstantsUtil.COMPANY;
 
 public class GraphSortRouter {
 
