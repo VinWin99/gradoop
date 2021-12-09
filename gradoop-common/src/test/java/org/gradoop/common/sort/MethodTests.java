@@ -1,9 +1,9 @@
 package org.gradoop.common.sort;
 
+import org.gradoop.common.exceptions.SortException;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class MethodTests {
 
@@ -196,6 +196,42 @@ public class MethodTests {
         String expected = "SortedInfo{sortedBy='company', count=2, items=[Acme Corp, Globex Inc.]}";
 
         assertEquals(expected, actual);
+
+    }
+
+    /**
+     * When - The given String graph nodes to be sorted by a given attribute
+     * Then - the nodes values can be organized by the sortAny for the sortAny method
+     * @throws SortException
+     */
+    @Test
+    public void sortAnyTest() throws SortException {
+        String graph = "g1:graph[" +
+                "(p1:Person {name: \"Bob\", age: 24})-[:friendsWith]->" +
+                "(p2:Person{name: \"Alice\", age: 30})-[:friendsWith]->(p1)" +
+                "(p2)-[:friendsWith]->(p3:Person {name: \"Jacob\", age: 27})-[:friendsWith]->(p2) " +
+                "(p3)-[:friendsWith]->(p4:Person{name: \"Marc\", age: 40})-[:friendsWith]->(p3) " +
+                "(p4)-[:friendsWith]->(p5:Person{name: \"Sara\", age: 33})-[:friendsWith]->(p4) " +
+                "(c1:Company {name: \"Acme Corp\"}) " +
+                "(c2:Company {name: \"Globex Inc.\"}) " +
+                "(p2)-[:worksAt]->(c1) " +
+                "(p4)-[:worksAt]->(c1) " +
+                "(p5)-[:worksAt]->(c1) " +
+                "(p1)-[:worksAt]->(c2) " +
+                "(p3)-[:worksAt]->(c2) " + "] " +
+                "g2:graph[" +
+                "(p4)-[:friendsWith]->(p6:Person {name: \"Paul\", age: 37})-[:friendsWith]->(p4) " +
+                "(p6)-[:friendsWith]->(p7:Person {name: \"Mike\", age: 23})-[:friendsWith]->(p6) " +
+                "(p8:Person {name: \"Jil\", age: 32})-[:friendsWith]->(p7)-[:friendsWith]->(p8) " +
+                "(p6)-[:worksAt]->(c2) " +
+                "(p7)-[:worksAt]->(c2) " +
+                "(p8)-[:worksAt]->(c1) " + "]";
+
+        // call sort method
+        GraphSortStrategyHelper graphSortStrategyHelper = new GraphSortStrategyHelper();
+        String actual = graphSortStrategyHelper.sortAny(graph, "works");
+
+        assertNotNull(actual);
 
     }
 }

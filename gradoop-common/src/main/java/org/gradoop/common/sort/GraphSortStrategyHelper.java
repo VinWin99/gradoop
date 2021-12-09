@@ -1,5 +1,7 @@
 package org.gradoop.common.sort;
 
+import org.gradoop.common.exceptions.SortException;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.regex.Matcher;
@@ -91,5 +93,31 @@ public class GraphSortStrategyHelper {
         SortedInfo sInfo = new SortedInfo(AGE, result.length - 1, ages);
         return sInfo.toString();
     }
+
+    /**
+     * <p> The sortAny method uses this to fetch and order the actual ages
+     * @param graph String representation of a graph
+     * @throws SortException when something goes wrong in sort
+     * @return String of Sorted Info Object containing graph's attributes sorted by Attribute
+     */
+    public static String sortAny(String graph, String attribute) throws SortException {
+        String[] result = graph.split(attribute);
+        ArrayList<String> sorted = new ArrayList<>();
+        Pattern p = Pattern.compile(attribute);
+        try {
+            Matcher m = p.matcher(graph);
+            while (m.find()) {
+                sorted.add(m.group(0));
+            }
+        } catch (Exception exception) {
+            throw new SortException("Sort exception on this sort attribute: " + attribute);
+        }
+
+        Collections.sort(sorted);
+
+        SortedInfo sInfo = new SortedInfo(attribute, result.length - 1, sorted);
+        return sInfo.toString();
+    }
+
 
 }
