@@ -14,6 +14,7 @@ import static org.gradoop.common.sort.SortConstantsUtil.COMPANY;
 public class GraphSortStrategyHelper {
 
     /**
+     * CS427 https://github.com/dbs-leipzig/gradoop/issues/185
      * <p> The strategy routes here if the chose attribute is age, to sort by age
      * @param graph String representation of a graph
      * @return String of Sorted Info Object containing graph's attributes sorted by Age
@@ -38,6 +39,7 @@ public class GraphSortStrategyHelper {
     }
 
     /**
+     * CS427 https://github.com/dbs-leipzig/gradoop/issues/185
      * <p> The strategy routes here if the chose attribute is name, to sort by name
      * @param graph String representation of a graph
      * @return String of Sorted Info Object containing graph's attributes sorted by Name
@@ -55,6 +57,7 @@ public class GraphSortStrategyHelper {
     }
 
     /**
+     * CS427 https://github.com/dbs-leipzig/gradoop/issues/185
      * <p> The strategy routes here if the chose attribute is Company, to sort by Company
      * @param graph String representation of a graph
      * @return String of Sorted Info Object containing graph's attributes sorted by Company
@@ -75,6 +78,7 @@ public class GraphSortStrategyHelper {
     }
 
     /**
+     * CS427 https://github.com/dbs-leipzig/gradoop/issues/185
      * <p> The sortAge method uses this to fetch and order the actual ages
      * @param graph String representation of a graph
      * @return String of Sorted Info Object containing graph's attributes sorted by Company
@@ -95,6 +99,7 @@ public class GraphSortStrategyHelper {
     }
 
     /**
+     * CS427 https://github.com/dbs-leipzig/gradoop/issues/185
      * <p> The sortAny method uses this to fetch and order the actual ages
      * @param graph String representation of a graph
      * @throws SortException when something goes wrong in sort

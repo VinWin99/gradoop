@@ -7,6 +7,7 @@ import static org.junit.Assert.assertEquals;
 public class ScenarioTest {
 
     /**
+     * CS427 https://github.com/dbs-leipzig/gradoop/issues/185
      * When - A given graph in String format need to be sorted based on various attributes
      * Then - The graph is sorted and returned in a Sorted Info String object
      */

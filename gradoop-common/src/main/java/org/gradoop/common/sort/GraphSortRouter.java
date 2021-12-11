@@ -9,6 +9,7 @@ import static org.gradoop.common.sort.SortConstantsUtil.COMPANY;
 public class GraphSortRouter {
 
     /**
+     * CS427 https://github.com/dbs-leipzig/gradoop/issues/185
      * <p> The router for the sorting method to decide how to sort the graph
      * @param graph String representation of a graph
      * @param flag String indicating the attribute to sort on
@@ -30,7 +31,7 @@ public class GraphSortRouter {
     }
 
     /**
-     *
+     * CS427 https://github.com/dbs-leipzig/gradoop/issues/185
      * @param graph String representation of a graph
      * @param attribute String indicating the attribute to sort on
      * @return String of the Sorted Graph given by Strategy
@@ -41,6 +42,7 @@ public class GraphSortRouter {
     }
 
     /**
+     * CS427 https://github.com/dbs-leipzig/gradoop/issues/185
      * <p> To make sure the graph can be validated
      * @param graph String representation of a graph
      * @return boolean indicating if this is a valid graph to sort on

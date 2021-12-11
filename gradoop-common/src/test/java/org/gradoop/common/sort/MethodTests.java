@@ -8,6 +8,7 @@ import static org.junit.Assert.*;
 public class MethodTests {
 
     /**
+     * CS427 https://github.com/dbs-leipzig/gradoop/issues/185
      * When - The given String graph needs to be sorted by the age attribute
      * Then - The output SortedInfo String is sorted by age for each node
      */
@@ -54,6 +55,7 @@ public class MethodTests {
     }
 
     /**
+     * CS427 https://github.com/dbs-leipzig/gradoop/issues/185
      * When - The given String graph needs to be sorted by the name attribute
      * Then - The output SortedInfo String is sorted by name for each node
      */
@@ -163,6 +165,7 @@ public class MethodTests {
     }
 
     /**
+     * CS427 https://github.com/dbs-leipzig/gradoop/issues/185
      * When - The given String graph nodes to be sorted by age
      * Then - the nodes values can be sorted by a age comparator for the sortAge method
      */
@@ -200,6 +203,7 @@ public class MethodTests {
     }
 
     /**
+     * CS427 https://github.com/dbs-leipzig/gradoop/issues/185
      * When - The given String graph nodes to be sorted by a given attribute
      * Then - the nodes values can be organized by the sortAny for the sortAny method
      * @throws SortException
